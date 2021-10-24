@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mac book Pro</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        .main{
+            display: flex;
+            padding: 30px;
+            margin: 0 10%;
+        }
+        .img{
+            margin-right: 30px;
+        }
+        img{
+            width: 350px;
+        }
+        .content{
+            width: 600px;
+            
+        }
+        .content h2{
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .content p{
+            font-size: 14px;   
+        }
+        .text{
+            position: sticky;
+        }
+        button{
+            padding: 5px 10px;
+            background: #fff;
+            border: 1px solid gray;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.5s;
+            margin-right: 5px;
+        }
+        button:hover{
+            background: indianred;
+            color: #fff;
+            transition: 0.5s;
+            border: 1px solid indianred;
+        }
+        .price{
+            display: flex;
+            justify-content: space-between
+        }
+    </style>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="img">
+            <img src="https://macbook1.netlify.app/images/mac.png" alt="">
+        </div>
+        <div class="content">
+            <div class="text">
+                <h2>Customize your Blue 24-inch iMac with Apple M1 chip</h2>
+                <p>Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 
+                    7-core GPU,and 16-core Neural Engine 8GB unified memory 256GB SSD storage Two 
+                    Thunderbolt/ USB 4 ports Magic Mouse Keyboard.US Engilsh</p>
+            </div>
+            <div id="app">
+                <div>
+                    <div>
+                        <h5>Memory</h5>
+                        <button @click="btnHandle">8GB unified memory</button>
+                        <button @click="btnHandle2">16GB unified memory</button>
+                    </div>
+                    <div>
+                        <h5>storage</h5>
+                        <button @click="btnHandle3">256GB SSD</button>
+                        <button @click="btnHandle4">1TB SSD</button>
+                    </div>
+                    <div>
+                        <h5>Choose your delivery option</h5>
+                        <button @click="btnHandle5">Prime Delivery</button>
+                        <button @click="btnHandle6">Delivery charge $20</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="price">
+                        <h5>Best Price</h5>
+                        <h5>${{price}}</h5>
+                    </div>
+                    <div class="price">
+                        <h5>Extra Memory Cost</h5>
+                        <h5 id="price1">${{ memory }}</h5>
+                    </div>
+                    <div class="price">
+                        <h5>Extra Storage Cost</h5>
+                        <h5 id="price2">${{ storage }}</h5>
+                    </div>
+                    <div class="price">
+                        <h5>Delivery Cost</h5>
+                        <h5 id="price3">${{deliver}}</h5>
+                    </div>
+                    <hr>
+                    <div class="price">
+                        <h5>Total</h5>
+                        <h5 id="total1">${{total}}</h5>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
